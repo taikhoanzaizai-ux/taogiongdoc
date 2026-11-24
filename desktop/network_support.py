@@ -4,7 +4,7 @@ import subprocess, time
 def transient(text):
     t=text.lower()
     if any(s in t for s in ('no space left','disk full','winerror 112','401','403','certificate_verify_failed')):return False
-    return any(s in t for s in ('dns error','no such host','11001','getaddrinfo failed','nameresolutionerror','connectionerror','connecttimeout','readtimeout','timed out','connection reset','temporary failure in name resolution','failed to fetch','client error (connect)'))
+    return any(s in t for s in ('dns error','no such host','11001','getaddrinfo failed','nameresolutionerror','connectionerror','connecttimeout','readtimeout','timed out','connection reset','incompleteread','chunkedencodingerror','connection broken','temporary failure in name resolution','failed to fetch','client error (connect)'))
 
 def run_download(args,*,cwd=None,attempts=3):
     for attempt in range(attempts):

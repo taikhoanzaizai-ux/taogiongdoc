@@ -59,7 +59,7 @@ py=env/('Scripts/python.exe' if os.name=='nt' else 'bin/python')
 if engine=='index-tts':
     require_space(repo,remaining_space(repo/'checkpoints',14*2**30))
     print('Tải checkpoint IndexTTS-2.5. Có thể mất nhiều GB; các lần sau dùng lại dữ liệu.',flush=True)
-    run_download([str(py),'-c',"from huggingface_hub import snapshot_download; snapshot_download('IndexTeam/IndexTTS-2.5',local_dir='checkpoints')"],cwd=repo)
+    run_download([str(py),'-c',"from huggingface_hub import snapshot_download; snapshot_download('IndexTeam/IndexTTS-2.5',local_dir='checkpoints',max_workers=2)"],cwd=repo)
 if engine=='fish-speech':
     run_download([str(py),'-c',"from huggingface_hub import snapshot_download; snapshot_download('fishaudio/s2-pro',local_dir='checkpoints/s2-pro')"],cwd=repo)
 if engine=='gpt-sovits':
