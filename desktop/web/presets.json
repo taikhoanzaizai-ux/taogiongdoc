@@ -950,10 +950,5 @@
     "voices": [],
     "default": "",
     "source": "Giọng mặc định hoặc audio mẫu của bạn."
-  },
-  "moss-tts": {
-    "voices": [],
-    "default": "",
-    "source": "Giọng mặc định hoặc audio mẫu của bạn."
   }
 }

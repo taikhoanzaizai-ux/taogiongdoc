@@ -39,7 +39,7 @@ with zipfile.ZipFile(args.output,'w',zipfile.ZIP_DEFLATED,compresslevel=6) as z:
 with zipfile.ZipFile(args.output) as z:
     assert z.testzip() is None
     for e in json.loads((root/'desktop/web/engines.json').read_text()):
-        if e['id'] not in ('omnivoice','moss-tts'):
+        if e['id'] != 'omnivoice':
             assert any(n.startswith('QuanVoice-Studio/upstream/'+e['id']+'/') for n in z.namelist())
     assert 'QuanVoice-Studio/BAT_DAU.bat' in z.namelist()
     print('Full source files:',len(z.namelist()))

@@ -16,7 +16,7 @@ def studio(tmp_path,monkeypatch):
     m.SETUP_POOL.shutdown(wait=True);m.POOL.shutdown(wait=True)
 
 def test_profiles_and_receipt_fingerprint():
-    assert len(setup_policy.selected('all'))==9
+    assert len(setup_policy.selected('all'))==8
     assert setup_policy.selected('recommended')==('vieneu','whisper')
     assert setup_policy.selected('none')==()
     with pytest.raises(ValueError):setup_policy.selected('invalid')
@@ -64,8 +64,8 @@ def test_setup_api_validation_and_real_queue(studio,monkeypatch):
     assert client.post('/api/setup/start',json={'profile':'wrong'}).status_code==400
     assert client.post('/api/setup/engine/unknown').status_code==404
     result=client.post('/api/setup/start',json={'profile':'all'})
-    assert result.status_code==202 and len(result.json()['scheduled'])==9
-    assert len(client.get('/api/setup').json())==9
+    assert result.status_code==202 and len(result.json()['scheduled'])==8
+    assert len(client.get('/api/setup').json())==8
     assert all(j['type']=='setup_engine' for j in client.get('/api/jobs').json())
 
 def test_failed_receipt_not_advertised_available(studio,monkeypatch):

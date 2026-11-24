@@ -7,9 +7,9 @@ def main():
     if e=='whisper':
         import whisper
         whisper.load_model(cfg.get('variant') or 'base',device=cfg['device'],download_root=os.environ['WHISPER_CACHE'])
-    elif e in ('omnivoice','moss-tts'):
+    elif e =='omnivoice':
         from multilingual import MultilingualRuntime
-        model=MultilingualRuntime(e,cfg)
+        model=MultilingualRuntime(cfg)
         model.synthesizer({'language':'vi'})('Xin chào, Quân Voice Studio đã sẵn sàng.',p['output'])
     elif e=='chatterbox':
         from chatterbox.mtl_tts import ChatterboxMultilingualTTS

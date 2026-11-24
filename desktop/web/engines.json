@@ -195,26 +195,5 @@
     "description": "Tạo và clone giọng Việt, Anh, Nhật, Hàn. Khi clone, nhập lời đọc đúng theo audio mẫu.",
     "note": "Tạo và clone giọng Việt, Anh, Nhật, Hàn. Khi clone, nhập lời đọc đúng theo audio mẫu.",
     "preset": ""
-  },
-  {
-    "id": "moss-tts",
-    "name": "MOSS-TTS v1.5 Local",
-    "by": "OpenMOSS",
-    "tag": "ĐA NGÔN NGỮ",
-    "color": "#7161d8",
-    "kind": "tts",
-    "clone": true,
-    "languages": [
-      "vi",
-      "en",
-      "ja",
-      "ko"
-    ],
-    "repo": "https://github.com/OpenMOSS/MOSS-TTS",
-    "module": "transformers",
-    "python": "3.12",
-    "description": "Tạo và clone đa ngôn ngữ. Nên thử đoạn ngắn để kiểm tra VRAM. CPU có thể chậm.",
-    "note": "Tạo và clone đa ngôn ngữ. Nên thử đoạn ngắn để kiểm tra VRAM. CPU có thể chậm.",
-    "preset": ""
   }
 ]

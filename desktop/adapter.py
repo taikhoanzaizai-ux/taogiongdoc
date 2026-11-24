@@ -15,9 +15,9 @@ class EngineRuntime:
             from vieneu import Vieneu
             kw={'mode':'v3nano'} if cfg.get('variant')=='v3nano' else {'backend':'onnx'} if cfg.get('device')=='cpu' else {}
             self.model=Vieneu(**kw)
-        elif engine in ('omnivoice','moss-tts'):
+        elif engine =='omnivoice':
             from multilingual import MultilingualRuntime
-            self.model=MultilingualRuntime(engine,cfg)
+            self.model=MultilingualRuntime(cfg)
         elif engine=='chatterbox':
             from chatterbox.mtl_tts import ChatterboxMultilingualTTS
             self.model=ChatterboxMultilingualTTS.from_pretrained(device=cfg.get('device','cpu'))
@@ -46,7 +46,7 @@ class EngineRuntime:
         if engine=='vieneu':
             args={'ref_audio':ref} if ref else ({'voice':p['preset']} if p.get('preset') else {})
             def synthesize(text,path):model.save(model.infer(text,**args),path)
-        elif engine in ('omnivoice','moss-tts'):
+        elif engine =='omnivoice':
             synthesize=model.synthesizer(p)
         elif engine=='chatterbox':
             import soundfile as sf

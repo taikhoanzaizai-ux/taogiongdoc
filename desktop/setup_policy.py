@@ -1,6 +1,6 @@
 """Small, deterministic setup policy shared by the API and tests."""
 import hashlib, json
-ORDER=('vieneu','whisper','chatterbox','index-tts','vibevoice','gpt-sovits','fish-speech','omnivoice','moss-tts')
+ORDER=('vieneu','whisper','chatterbox','index-tts','vibevoice','gpt-sovits','fish-speech','omnivoice')
 def selected(profile):
     if profile not in ('all','recommended','none'):raise ValueError('Chọn all, recommended hoặc none')
     return ORDER if profile=='all' else ORDER[:2] if profile=='recommended' else ()

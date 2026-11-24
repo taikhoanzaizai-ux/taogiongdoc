@@ -24,7 +24,6 @@ if engine in ('index-tts','fish-speech'):
     uv(*args,cwd=repo);env=repo/'.venv'
 else:
     env=data/'envs'/engine
-    if engine=='moss-tts':uv('python','install',e['python'])
     if not (env/('Scripts/python.exe' if os.name=='nt' else 'bin/python')).is_file():uv('venv','--allow-existing','--python',e['python'],env)
     py=env/('Scripts/python.exe' if os.name=='nt' else 'bin/python')
     if os.name=='nt' and engine in ('gpt-sovits','vibevoice'):
@@ -33,14 +32,9 @@ else:
         if probe.returncode:
             print(probe.stderr.decode('utf-8',errors='replace')[-1500:],flush=True)
             uv('pip','install','--python',py,'--reinstall-package','torch','--reinstall-package','torchaudio','torch','torchaudio','--index-url','https://download.pytorch.org/whl/cpu')
-    if engine in ('omnivoice','moss-tts'):
+    if engine=='omnivoice':
         device=sys.argv[3] if len(sys.argv)>3 else 'cpu'
-        if engine=='omnivoice':
-            uv('pip','install','--python',py,'--torch-backend','cu128' if device=='cuda' else 'cpu','omnivoice')
-        else:
-            uv('pip','install','--python',py,'--torch-backend','cu128' if device=='cuda' else 'cpu','-e',str(repo))
-            uv('pip','install','--python',py,'--index-url','https://download.pytorch.org/whl/'+('cu128' if device=='cuda' else 'cpu'),'torch==2.9.1','torchaudio==2.9.1')
-            uv('pip','install','--python',py,'torchcodec==0.8.1','transformers==5.0.0','accelerate>=1.10.1')
+        uv('pip','install','--python',py,'--torch-backend','cu128' if device=='cuda' else 'cpu','omnivoice')
     elif engine=='gpt-sovits':
         uv('pip','install','--python',py,'-r',repo/'extra-req.txt','--no-deps')
         requirements=repo/'requirements.txt'

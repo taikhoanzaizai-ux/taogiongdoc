@@ -1,12 +1,12 @@
 # Quân Voice Studio
 
-Ứng dụng Windows tạo và clone giọng trên máy. VieNeu V3 Turbo và Chatterbox Multilingual dùng môi trường riêng. OmniVoice và MOSS-TTS Local Transformer v1.5 hỗ trợ tiếng Việt, Anh, Nhật và Hàn.
+Ứng dụng Windows tạo và clone giọng trên máy. VieNeu V3 Turbo và Chatterbox Multilingual dùng môi trường riêng. OmniVoice hỗ trợ tiếng Việt, Anh, Nhật và Hàn.
 
 ## Cài trên Windows x64
 
 1. Tải `QuanVoice-Studio-Windows.zip` từ [GitHub Releases](https://github.com/taikhoanzaizai-ux/taogiongdoc/releases/latest).
 2. Giải nén rồi mở `QUAN_VOICE.vbs`. Internet cần thiết để tải thư viện và trọng số ở lần đầu.
-3. Mở **Kho mô hình**, chọn **Cấu hình** để chọn CPU hoặc GPU, rồi bấm **Cài tự động**. OmniVoice cần lời đọc khớp với audio mẫu khi clone. MOSS-TTS tải riêng Python 3.12 và có thể chậm trên CPU. Thử đoạn ngắn trước khi tạo bài dài.
+3. Mở **Kho mô hình**, chọn **Cấu hình** để chọn CPU hoặc GPU, rồi bấm **Cài tự động**. OmniVoice cần lời đọc khớp với audio mẫu khi clone. Thử đoạn ngắn trước khi tạo bài dài.
 
 ## Cập nhật
 
