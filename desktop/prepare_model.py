@@ -15,6 +15,8 @@ def main():
         from chatterbox.mtl_tts import ChatterboxMultilingualTTS
         ChatterboxMultilingualTTS.from_pretrained(device=cfg['device'])
     elif e=='index-tts':
+        from index_text import prepare_wetext
+        prepare_wetext()
         from indextts.infer_v2_5 import IndexTTS2
         d=Path(cfg['checkpoint'])
         IndexTTS2(cfg_path=str(d/'config.yaml'),model_dir=str(d),use_bf16=cfg['device']=='cuda')

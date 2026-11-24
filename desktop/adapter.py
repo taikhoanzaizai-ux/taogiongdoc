@@ -25,6 +25,8 @@ class EngineRuntime:
             # later request that returns to the built-in voice.
             self.default_conditions=copy.deepcopy(self.model.conds)
         elif engine=='index-tts':
+            from index_text import prepare_wetext
+            prepare_wetext()
             from indextts.infer_v2_5 import IndexTTS2
             checkpoints=Path(cfg['checkpoint'])
             self.model=IndexTTS2(cfg_path=str(checkpoints/'config.yaml'),model_dir=str(checkpoints),use_bf16=cfg.get('device')=='cuda',use_qwen_emo=p.get('auto_emotion',False))
