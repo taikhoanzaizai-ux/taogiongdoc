@@ -64,8 +64,8 @@ def test_setup_api_validation_and_real_queue(studio,monkeypatch):
     assert client.post('/api/setup/start',json={'profile':'wrong'}).status_code==400
     assert client.post('/api/setup/engine/unknown').status_code==404
     result=client.post('/api/setup/start',json={'profile':'all'})
-    assert result.status_code==202 and len(result.json()['scheduled'])==7
-    assert len(client.get('/api/setup').json())==7
+    assert result.status_code==202 and len(result.json()['scheduled'])==9
+    assert len(client.get('/api/setup').json())==9
     assert all(j['type']=='setup_engine' for j in client.get('/api/jobs').json())
 
 def test_failed_receipt_not_advertised_available(studio,monkeypatch):
