@@ -945,5 +945,15 @@
     "voices": [],
     "default": "",
     "source": "Whisper chép lời âm thanh, không có giọng đọc."
+  },
+  "omnivoice": {
+    "voices": [],
+    "default": "",
+    "source": "Giọng mặc định hoặc audio mẫu của bạn."
+  },
+  "moss-tts": {
+    "voices": [],
+    "default": "",
+    "source": "Giọng mặc định hoặc audio mẫu của bạn."
   }
 }

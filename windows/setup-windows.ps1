@@ -28,7 +28,7 @@ $AppRoot=Split-Path $PSScriptRoot -Parent
 $Data=if($env:QUAN_VOICE_DATA){$env:QUAN_VOICE_DATA}else{Join-Path $AppRoot 'data'}
 $Boot=Join-Path $Data 'bootstrap';$TranscriptStarted=$false
 $mutex=$null;$held=$false
-Write-Host 'QUAN VOICE STUDIO 1.6.0 - Opening application' -ForegroundColor Cyan
+Write-Host 'QUAN VOICE STUDIO 1.6.1 - Opening application' -ForegroundColor Cyan
 try{
  # Opening an installed app does not need ownership of its installer mutex.
  if(-not $NoLaunch -and -not $Repair){
@@ -160,5 +160,5 @@ try{
   Invoke-InstalledStudio $AppRoot $Data $Profile $installed -Desktop:$Desktop
  }
 
-}catch{Write-Host ('SETUP ERROR: '+$_.Exception.Message) -ForegroundColor Red;Write-Host ('Log: '+$Boot);if($Desktop){try{Add-Type -AssemblyName System.Windows.Forms;[System.Windows.Forms.MessageBox]::Show(($_.Exception.Message+"`nLog: "+$Boot),'QUAN Voice Studio 1.6.0')|Out-Null}catch{}};exit 1}
+}catch{Write-Host ('SETUP ERROR: '+$_.Exception.Message) -ForegroundColor Red;Write-Host ('Log: '+$Boot);if($Desktop){try{Add-Type -AssemblyName System.Windows.Forms;[System.Windows.Forms.MessageBox]::Show(($_.Exception.Message+"`nLog: "+$Boot),'QUAN Voice Studio 1.6.1')|Out-Null}catch{}};exit 1}
 finally{if($held){$mutex.ReleaseMutex()};if($mutex){$mutex.Dispose()};if($TranscriptStarted){Stop-Transcript|Out-Null}}

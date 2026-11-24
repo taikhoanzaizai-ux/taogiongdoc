@@ -4,7 +4,7 @@ import re
 import httpx
 
 REPOSITORY = "taikhoanzaizai-ux/taogiongdoc"
-CURRENT_VERSION = "1.6.0"
+CURRENT_VERSION = "1.6.1"
 ASSET_NAME = "QuanVoice-Studio-Windows.zip"
 
 

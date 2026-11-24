@@ -4,3 +4,5 @@ install-assets/
 dist/
 __pycache__/
 *.pyc
+.test-deps/
+.pytest_cache/

@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parent
 from storage import data_dir, configure_cache
 DATA=data_dir()
 configure_cache(DATA)
-URL='http://127.0.0.1:8765';TITLE='QUÂN Voice Studio';VERSION='1.6.0'
+URL='http://127.0.0.1:8765';TITLE='QUÂN Voice Studio';VERSION='1.6.1'
 
 def probe():
     from local_server import probe_url

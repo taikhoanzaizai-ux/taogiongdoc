@@ -1,7 +1,7 @@
 """Reserve a loopback socket atomically and share one backend per data folder."""
 import json,os,socket,threading,time,urllib.request,webbrowser
 from pathlib import Path
-VERSION='1.6.0';COMPATIBLE_VERSIONS={VERSION,'1.5.5','1.5.4','1.5.0','1.5.1','1.5.2','1.5.3'};PRODUCT='QuanVoiceStudio';HOST='127.0.0.1';DEFAULT_PORT=8765
+VERSION='1.6.1';COMPATIBLE_VERSIONS={VERSION,'1.5.5','1.5.4','1.5.0','1.5.1','1.5.2','1.5.3'};PRODUCT='QuanVoiceStudio';HOST='127.0.0.1';DEFAULT_PORT=8765
 
 def probe_url(url,timeout=.6):
     try:
