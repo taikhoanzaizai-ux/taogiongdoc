@@ -30,8 +30,20 @@ def main():
             part.replace(file)
         location=data/'wsl'/DISTRO;location.parent.mkdir(exist_ok=True)
         run('wsl.exe','--import',DISTRO,location,file,'--version','2')
-    move_fish_storage(data)
-    check_fish_launch()
+    try:
+        move_fish_storage(data)
+    except (RuntimeError, subprocess.TimeoutExpired) as move_error:
+        try:
+            check_fish_launch()
+        except Exception as launch_error:
+            raise RuntimeError(
+                "Không mở được WSL QuanVoice-Fish ở vị trí đã đăng ký. "
+                "Giữ nguyên các file ext4.vhdx và kiểm tra đường dẫn trước khi cài lại. "
+                f"Lỗi chuyển ổ: {move_error}. Lỗi mở WSL: {launch_error}"
+            ) from launch_error
+        print("Chưa chuyển được ổ WSL. Tiếp tục dùng QuanVoice-Fish ở vị trí hiện tại.", flush=True)
+    else:
+        check_fish_launch()
     # Existing completed/partial checkpoints reduce the remaining download budget.
     measured=subprocess.run(['wsl.exe','-d',DISTRO,'-u','root','--exec','du','-sb','/opt/quanvoice/fish-speech/checkpoints'],capture_output=True,timeout=30)
     try:existing=int(decode_wsl_output(measured.stdout).split()[0]) if measured.returncode==0 else 0

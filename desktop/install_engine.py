@@ -53,7 +53,10 @@ else:
         uv('pip','install','--python',py,'-r',requirements)
     else:
         source=str(repo)+('[streamingtts]' if engine=='vibevoice' else '')
-        uv('pip','install','--python',py,'-e',source)
+        if engine=='chatterbox':
+            uv('pip','install','--python',py,'--reinstall-package','chatterbox-tts',source)
+        else:
+            uv('pip','install','--python',py,'-e',source)
     uv('pip','install','--python',py,'soundfile')
     if engine in ('vibevoice','gpt-sovits'):
         uv('pip','check','--python',py)
