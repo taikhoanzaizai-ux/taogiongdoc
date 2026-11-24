@@ -4,7 +4,7 @@ from pathlib import Path
 from subtitle_exports import audio_duration,paragraph_blocks
 
 # Per-call sizes protect model context; they never truncate the complete input.
-CHUNK_SIZE={'vieneu':350,'chatterbox':240,'index-tts':240,'gpt-sovits':350,'fish-speech':350,'vibevoice':400}
+CHUNK_SIZE={'vieneu':350,'chatterbox':240,'index-tts':240,'gpt-sovits':350,'fish-speech':350,'vibevoice':400,'omnivoice':240}
 def chunk_size(engine,language):
     size=CHUNK_SIZE[engine]
     return min(size,80) if language in ('zh','yue','ja','ko') else size
