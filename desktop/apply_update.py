@@ -4,6 +4,7 @@ import os
 from pathlib import Path
 import shutil
 import stat
+import subprocess
 import sys
 import traceback
 import zipfile
@@ -104,6 +105,8 @@ def main():
     try:
         wait_for_studio(int(sys.argv[4]))
         replace_application(root, folder / "staged", folder / "backup")
+        wscript = Path(os.environ["SystemRoot"]) / "System32" / "wscript.exe"
+        subprocess.Popen([str(wscript), str(root / "QUAN_VOICE.vbs")], cwd=root)
     except Exception:
         log.parent.mkdir(parents=True, exist_ok=True)
         with log.open("a", encoding="utf-8") as stream:
@@ -113,7 +116,6 @@ def main():
         )
         return
     shutil.rmtree(folder, ignore_errors=True)
-    os.startfile(str(root / "QUAN_VOICE.vbs"))
 
 
 if __name__ == "__main__":
