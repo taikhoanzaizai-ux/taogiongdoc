@@ -152,8 +152,52 @@ def check_updates():
         raise HTTPException(502, "Không kiểm tra được bản cập nhật trên GitHub.") from error
 
 
+UPDATE_LOCK = threading.Lock()
+
+
+@app.post('/api/updates/install', status_code=202)
+def install_update():
+    from updates import latest_release, prepare_update
+
+    request_exit = getattr(app.state, 'request_update_exit', None)
+    if os.name != 'nt' or not request_exit:
+        raise HTTPException(409, 'Mở Studio bằng QUAN_VOICE.vbs để tự cập nhật.')
+    if not UPDATE_LOCK.acquire(blocking=False):
+        raise HTTPException(409, 'Studio đang chuẩn bị cập nhật.')
+    folder = None
+    scheduled = False
+    try:
+        if any(job['status'] in ('queued', 'running') for job in rows('jobs')):
+            raise HTTPException(409, 'Chờ các tác vụ đang chạy hoặc đang xếp hàng hoàn tất rồi cập nhật.')
+        release = latest_release()
+        if not release['available']:
+            raise HTTPException(409, 'Chưa có bản mới để cài.')
+        root = ROOT.parent.resolve()
+        folder = prepare_update(root, release)
+        if any(job['status'] in ('queued', 'running') for job in rows('jobs')):
+            raise HTTPException(409, 'Có tác vụ mới trong hàng đợi. Hãy cập nhật sau khi tác vụ hoàn tất.')
+        subprocess.Popen(
+            [sys.executable, str(folder / 'apply_update.py'), str(root), str(folder),
+             str(DATA / 'logs' / 'update.log'), str(os.getpid())],
+            cwd=root, creationflags=subprocess.DETACHED_PROCESS,
+            stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+        )
+        scheduled = True
+        threading.Timer(.8, request_exit).start()
+        return {'latest': release['latest']}
+    except HTTPException:
+        raise
+    except Exception as error:
+        raise HTTPException(502, 'Không chuẩn bị được bản cập nhật: ' + str(error)) from error
+    finally:
+        if not scheduled:
+            if folder:
+                shutil.rmtree(folder, ignore_errors=True)
+            UPDATE_LOCK.release()
+
+
 @app.get('/api/health')
-def health():return {'product':'QuanVoiceStudio','version':'1.6.4','data_dir':str(DATA)}
+def health():return {'product':'QuanVoiceStudio','version':'1.6.5','data_dir':str(DATA)}
 
 @app.post('/api/app/exit')
 def exit_desktop():
@@ -163,7 +207,7 @@ def exit_desktop():
 
 @app.get('/api/status')
 def status():
-    return {'connected':True,'product':'QuanVoiceStudio','version':'1.6.4','local_url':getattr(app.state,'local_url','http://127.0.0.1:8765'),'data_dir':str(DATA),'storage':disk_info(DATA),'ffmpeg':bool(shutil.which('ffmpeg')),'engines':[engine_status(e) for e in ENGINES],'runtime':runtime_status(),'desktop_mode':os.environ.get('QUAN_VOICE_DESKTOP')=='1'}
+    return {'connected':True,'product':'QuanVoiceStudio','version':'1.6.5','local_url':getattr(app.state,'local_url','http://127.0.0.1:8765'),'data_dir':str(DATA),'storage':disk_info(DATA),'ffmpeg':bool(shutil.which('ffmpeg')),'engines':[engine_status(e) for e in ENGINES],'runtime':runtime_status(),'desktop_mode':os.environ.get('QUAN_VOICE_DESKTOP')=='1'}
 class EngineConfig(BaseModel):
     python:str='';repo:str='';checkpoint:str='';device:str='cpu';variant:str='';endpoint:str='';auto_start:bool=False;wsl_distro:str='';wsl_setup_complete:bool=False
 @app.put('/api/engines/{engine}')
@@ -435,7 +479,7 @@ def engine_diagnostics(engine:str):
 @app.get('/api/diagnostics/download')
 def download_diagnostics():
     import platform
-    lines=['QUAN Voice Studio 1.6.4 - Nhật ký chẩn đoán',platform.platform(),'Python ứng dụng: '+sys.version.split()[0],'Không thêm file giọng hoặc trường kịch bản từ dự án.','Bộ xử lý: '+json.dumps(runtime_status(),ensure_ascii=False)]
+    lines=['QUAN Voice Studio 1.6.5 - Nhật ký chẩn đoán',platform.platform(),'Python ứng dụng: '+sys.version.split()[0],'Không thêm file giọng hoặc trường kịch bản từ dự án.','Bộ xử lý: '+json.dumps(runtime_status(),ensure_ascii=False)]
     for engine in ENGINES:
         item=engine_diagnostics(engine)
         lines+=['','=== '+item['name']+' · '+item['state']+' ===',item['summary'],item['hint'],item['log']]

@@ -191,12 +191,28 @@ document.addEventListener('click', async (event) => {
       status.textContent = 'Chưa có bản mới hơn ' + release.current + '.';
       return;
     }
-    const link = document.createElement('a');
-    link.href = release.download;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.textContent = 'Tải bản ' + release.latest;
-    status.replaceChildren(link, ' · Đóng Studio, giải nén đè các tệp ứng dụng, rồi mở lại.');
+    const install = document.createElement('button');
+    install.type = 'button';
+    install.className = 'button button-primary';
+    install.textContent = 'Cập nhật ngay · ' + release.latest;
+    install.onclick = async () => {
+      install.disabled = true;
+      install.textContent = 'Đang tải và kiểm tra bản cập nhật…';
+      try {
+        await api('/updates/install', {method: 'POST', signal: AbortSignal.timeout(180000)});
+        install.textContent = 'Studio sẽ đóng và tự mở lại…';
+      } catch (error) {
+        install.disabled = false;
+        install.textContent = 'Cập nhật ngay · ' + release.latest;
+        toast(error.message);
+      }
+    };
+    const download = document.createElement('a');
+    download.href = release.download;
+    download.target = '_blank';
+    download.rel = 'noopener noreferrer';
+    download.textContent = 'Tải ZIP';
+    status.replaceChildren(install, ' ', download);
   } catch {
     status.textContent = 'Không kiểm tra được GitHub. Hãy thử lại.';
   } finally {

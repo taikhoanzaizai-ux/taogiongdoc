@@ -10,7 +10,7 @@
 
 ## Cập nhật
 
-Vào **Cài đặt → Cập nhật ứng dụng → Kiểm tra bản cập nhật**. Tải ZIP khi có bản mới, đóng Studio, rồi giải nén đè vào cùng thư mục cài đặt. Thư mục `data` chứa giọng, kết quả và mô hình đã tải. Gói cập nhật không chứa thư mục này.
+Từ bản 1.6.5, mở Studio bằng `QUAN_VOICE.vbs`, vào **Cài đặt → Cập nhật ứng dụng → Kiểm tra bản cập nhật** rồi chọn **Cập nhật ngay**. Studio tải bản Windows từ GitHub, tự đóng và tự mở lại sau khi thay tệp. Thư mục `data` được giữ nguyên. Từ các bản cũ, giải nén ZIP 1.6.5 đè vào thư mục cài đặt một lần để có nút này.
 
 Khi phát hành phiên bản mới, cập nhật phiên bản trong mã rồi đẩy tag `vX.Y.Z` để GitHub Actions tạo ZIP và GitHub Release.
 

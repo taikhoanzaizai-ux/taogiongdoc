@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parent
 from storage import data_dir, configure_cache
 DATA=data_dir()
 configure_cache(DATA)
-URL='http://127.0.0.1:8765';TITLE='QUÂN Voice Studio';VERSION='1.6.4'
+URL='http://127.0.0.1:8765';TITLE='QUÂN Voice Studio';VERSION='1.6.5'
 
 def probe():
     from local_server import probe_url
@@ -62,6 +62,10 @@ def main():
                     try:window.destroy()
                     finally:host.should_exit=True
                 server.app.state.request_exit=quit_window
+                def quit_for_update():
+                    window.confirm_close = False
+                    quit_window()
+                server.app.state.request_update_exit=quit_for_update
             native=True
             webview.start(gui='edgechromium' if os.name=='nt' else None,private_mode=False,storage_path=str(DATA/'desktop-profile'),icon=str(ROOT/'app.ico'))
         except Exception as error:
