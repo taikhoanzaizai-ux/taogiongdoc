@@ -16,7 +16,7 @@ def studio(tmp_path,monkeypatch):
     m.SETUP_POOL.shutdown(wait=True);m.POOL.shutdown(wait=True)
 
 def test_profiles_and_receipt_fingerprint():
-    assert len(setup_policy.selected('all'))==7
+    assert len(setup_policy.selected('all'))==9
     assert setup_policy.selected('recommended')==('vieneu','whisper')
     assert setup_policy.selected('none')==()
     with pytest.raises(ValueError):setup_policy.selected('invalid')

@@ -48,7 +48,7 @@ def load_model(*a,**kw):return Model()
 
 def test_catalog_and_static(client):
     r=client.get('/');assert r.status_code==200;assert 'QUÂN Voice Studio' in r.text
-    catalog=client.get('/engines.json').json();assert len(catalog)==7;assert sum(e['clone'] for e in catalog)==5
+    catalog=client.get('/engines.json').json();assert len(catalog)==9;assert sum(e['clone'] for e in catalog)==7
     status=client.get('/api/status').json();assert status['ffmpeg'];assert not status['engines'][0]['available']
 def test_upload_normalizes_and_persists(client,app):
     v=upload(client);assert v['name']=='Giọng thử';assert v['duration']==1
