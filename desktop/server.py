@@ -57,7 +57,10 @@ async def local_only(request:Request,call_next):
         origin=request.headers.get('origin')
         if origin and origin!=str(request.base_url).rstrip('/'):
             return __import__('fastapi').responses.JSONResponse({'detail':'Hãy dùng giao diện cục bộ tại cùng địa chỉ.'},status_code=403)
-    return await call_next(request)
+    response = await call_next(request)
+    if request.url.path in ("/", "/index.html", "/engines.json", "/presets.json"):
+        response.headers["Cache-Control"] = "no-store"
+    return response
 
 def db():
     c=sqlite3.connect(DB);c.row_factory=sqlite3.Row;return c
@@ -197,7 +200,7 @@ def install_update():
 
 
 @app.get('/api/health')
-def health():return {'product':'QuanVoiceStudio','version':'1.6.7','data_dir':str(DATA)}
+def health():return {'product':'QuanVoiceStudio','version':'1.6.8','data_dir':str(DATA)}
 
 @app.post('/api/app/exit')
 def exit_desktop():
@@ -207,7 +210,7 @@ def exit_desktop():
 
 @app.get('/api/status')
 def status():
-    return {'connected':True,'product':'QuanVoiceStudio','version':'1.6.7','local_url':getattr(app.state,'local_url','http://127.0.0.1:8765'),'data_dir':str(DATA),'storage':disk_info(DATA),'ffmpeg':bool(shutil.which('ffmpeg')),'engines':[engine_status(e) for e in ENGINES],'runtime':runtime_status(),'desktop_mode':os.environ.get('QUAN_VOICE_DESKTOP')=='1'}
+    return {'connected':True,'product':'QuanVoiceStudio','version':'1.6.8','local_url':getattr(app.state,'local_url','http://127.0.0.1:8765'),'data_dir':str(DATA),'storage':disk_info(DATA),'ffmpeg':bool(shutil.which('ffmpeg')),'engines':[engine_status(e) for e in ENGINES],'runtime':runtime_status(),'desktop_mode':os.environ.get('QUAN_VOICE_DESKTOP')=='1'}
 class EngineConfig(BaseModel):
     python:str='';repo:str='';checkpoint:str='';device:str='cpu';variant:str='';endpoint:str='';auto_start:bool=False;wsl_distro:str='';wsl_setup_complete:bool=False
 @app.put('/api/engines/{engine}')
@@ -479,7 +482,7 @@ def engine_diagnostics(engine:str):
 @app.get('/api/diagnostics/download')
 def download_diagnostics():
     import platform
-    lines=['QUAN Voice Studio 1.6.7 - Nhật ký chẩn đoán',platform.platform(),'Python ứng dụng: '+sys.version.split()[0],'Không thêm file giọng hoặc trường kịch bản từ dự án.','Bộ xử lý: '+json.dumps(runtime_status(),ensure_ascii=False)]
+    lines=['QUAN Voice Studio 1.6.8 - Nhật ký chẩn đoán',platform.platform(),'Python ứng dụng: '+sys.version.split()[0],'Không thêm file giọng hoặc trường kịch bản từ dự án.','Bộ xử lý: '+json.dumps(runtime_status(),ensure_ascii=False)]
     for engine in ENGINES:
         item=engine_diagnostics(engine)
         lines+=['','=== '+item['name']+' · '+item['state']+' ===',item['summary'],item['hint'],item['log']]

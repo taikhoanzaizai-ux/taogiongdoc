@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parent
 from storage import data_dir, configure_cache
 DATA=data_dir()
 configure_cache(DATA)
-URL='http://127.0.0.1:8765';TITLE='QUÂN Voice Studio';VERSION='1.6.7'
+URL='http://127.0.0.1:8765';TITLE='QUÂN Voice Studio';VERSION='1.6.8'
 
 def probe():
     from local_server import probe_url
@@ -14,7 +14,7 @@ def probe():
 def browser_command():
     candidates=[Path(os.environ.get('ProgramFiles(x86)','C:/Program Files (x86)'))/'Microsoft/Edge/Application/msedge.exe',Path(os.environ.get('ProgramFiles','C:/Program Files'))/'Microsoft/Edge/Application/msedge.exe',Path(os.environ.get('ProgramFiles','C:/Program Files'))/'Google/Chrome/Application/chrome.exe',Path(os.environ.get('LOCALAPPDATA',''))/'Google/Chrome/Application/chrome.exe']
     browser=next((p for p in candidates if p.is_file()),None)
-    return [str(browser),'--app='+URL,'--user-data-dir='+str(DATA/'desktop-browser'),'--no-first-run','--start-maximized'] if browser else None
+    return [str(browser),'--app='+URL+'/?v='+VERSION,'--user-data-dir='+str(DATA/'desktop-browser'),'--no-first-run','--start-maximized'] if browser else None
 
 def main():
     DATA.mkdir(parents=True,exist_ok=True);(DATA/'logs').mkdir(exist_ok=True)
@@ -56,7 +56,7 @@ def main():
             import webview
             webview.settings['ALLOW_DOWNLOADS']=True
             webview.settings['OPEN_EXTERNAL_LINKS_IN_BROWSER']=True
-            window=webview.create_window(TITLE,URL,width=1360,height=900,maximized=True,min_size=(980,650),text_select=True,confirm_close=True,background_color='#f4f6fa')
+            window=webview.create_window(TITLE,URL+'/?v='+VERSION,width=1360,height=900,maximized=True,min_size=(980,650),text_select=True,confirm_close=True,background_color='#f4f6fa')
             if host:
                 def quit_window():
                     try:window.destroy()

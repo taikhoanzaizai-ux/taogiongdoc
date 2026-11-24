@@ -6,7 +6,7 @@ from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 REPOSITORY = "taikhoanzaizai-ux/taogiongdoc"
-CURRENT_VERSION = "1.6.7"
+CURRENT_VERSION = "1.6.8"
 ASSET_NAME = "QuanVoice-Studio-Windows.zip"
 
 
