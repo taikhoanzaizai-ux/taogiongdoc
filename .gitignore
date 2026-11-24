@@ -1,0 +1,6 @@
+data/
+upstream/
+install-assets/
+dist/
+__pycache__/
+*.pyc

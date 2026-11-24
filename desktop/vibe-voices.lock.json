@@ -1,0 +1,131 @@
+{
+  "repo": "https://github.com/microsoft/VibeVoice",
+  "revision": "16fb2cb1217c9934a886e1948ffb06120caa2df5",
+  "files": [
+    {
+      "path": "demo/voices/streaming_model/de-Spk0_man.pt",
+      "bytes": 7039666,
+      "sha256": "ba2c3e06c52ca02a851326d8a354188c8cafe4543c717d8beb8b64fe3466913a"
+    },
+    {
+      "path": "demo/voices/streaming_model/de-Spk1_woman.pt",
+      "bytes": 5290778,
+      "sha256": "11b4fa505f7d636af7047632793fe639b1e826d46fc6c00d64dacdcf0805ad72"
+    },
+    {
+      "path": "demo/voices/streaming_model/en-Carter_man.pt",
+      "bytes": 4256002,
+      "sha256": "a7bfdf1cd4939c22469bcfc6f427ae9c4467b3df46c2c14303a39c294cfc6897"
+    },
+    {
+      "path": "demo/voices/streaming_model/en-Davis_man.pt",
+      "bytes": 2471258,
+      "sha256": "67561d63bfa2153616e4c02fd967007c182593fc53738a6ad94bf5f84e8832ac"
+    },
+    {
+      "path": "demo/voices/streaming_model/en-Emma_woman.pt",
+      "bytes": 3343090,
+      "sha256": "75b15c481e0d848991f1789620aa9929c583ec2c5f701f8152362cf74498bbf8"
+    },
+    {
+      "path": "demo/voices/streaming_model/en-Frank_man.pt",
+      "bytes": 3359578,
+      "sha256": "acaa8f1a4f46a79f8f5660cfb7a3af06ef473389319df7debc07376fdc840e47"
+    },
+    {
+      "path": "demo/voices/streaming_model/en-Grace_woman.pt",
+      "bytes": 2772466,
+      "sha256": "5f0ef02a3f3cace04cf721608b65273879466bb15fe4044e46ec6842190f6bb1"
+    },
+    {
+      "path": "demo/voices/streaming_model/en-Mike_man.pt",
+      "bytes": 2016234,
+      "sha256": "afb64b580fbc6fab09af04572bbbd2b3906ff8ed35a28731a90b8681e47bdc89"
+    },
+    {
+      "path": "demo/voices/streaming_model/fr-Spk0_man.pt",
+      "bytes": 4386482,
+      "sha256": "64f12314f9df2348f0fd6cdbee9efb0f1ebfc286034560e207be5efc4108a368"
+    },
+    {
+      "path": "demo/voices/streaming_model/fr-Spk1_woman.pt",
+      "bytes": 4272170,
+      "sha256": "b1425e8b7fab2fb03d400ca23d672ca96dbbb6b7b000e52332117f2fece33077"
+    },
+    {
+      "path": "demo/voices/streaming_model/in-Samuel_man.pt",
+      "bytes": 3782658,
+      "sha256": "b6ec5e8cde4006aa3f26fde0422124f3296f83f5738b5b4506268855a305cb06"
+    },
+    {
+      "path": "demo/voices/streaming_model/it-Spk0_woman.pt",
+      "bytes": 2552026,
+      "sha256": "1a838184c0304802c696bac887d15a8143539fbb0b5371fe53de66059a010f3d"
+    },
+    {
+      "path": "demo/voices/streaming_model/it-Spk1_man.pt",
+      "bytes": 2854514,
+      "sha256": "349ce0d28e93ea8b1df55800527f3a8ba8a55bb9e88990841db1bc9ee424519a"
+    },
+    {
+      "path": "demo/voices/streaming_model/jp-Spk0_man.pt",
+      "bytes": 4668234,
+      "sha256": "4881286aa2fe14e65a800d64a7ae7cd0a7ccda53ff6de88a8d6590980c20e16d"
+    },
+    {
+      "path": "demo/voices/streaming_model/jp-Spk1_woman.pt",
+      "bytes": 4637994,
+      "sha256": "d7a3f5ca602912152c483516bc0198ea13765affd6fbf16fc1bed5e91e1cbbda"
+    },
+    {
+      "path": "demo/voices/streaming_model/kr-Spk0_woman.pt",
+      "bytes": 4154002,
+      "sha256": "c6d15b8d66f8c271655d000b5923cb33a9b564bf84484a82b10431dc1a2fafef"
+    },
+    {
+      "path": "demo/voices/streaming_model/kr-Spk1_man.pt",
+      "bytes": 5865138,
+      "sha256": "65514854c7ffc7080aba964cf40811822358b19397132ddaf9b3cdb168c394f3"
+    },
+    {
+      "path": "demo/voices/streaming_model/nl-Spk0_man.pt",
+      "bytes": 3704498,
+      "sha256": "70e9221ed11737e2b32af3ccfebb673bd1122f9f9ea8d357efd91e9f3b8e8f72"
+    },
+    {
+      "path": "demo/voices/streaming_model/nl-Spk1_woman.pt",
+      "bytes": 5095874,
+      "sha256": "76bfd3c13bb9d61760f6146c4eadc032e9d19ddecd4eed6832bc323a8cb5e8c5"
+    },
+    {
+      "path": "demo/voices/streaming_model/pl-Spk0_man.pt",
+      "bytes": 3750522,
+      "sha256": "6c06a9e251ab08ade328dfe16e01eb6f5ddc4ba9c66695a73e3aae8a919396bd"
+    },
+    {
+      "path": "demo/voices/streaming_model/pl-Spk1_woman.pt",
+      "bytes": 4978626,
+      "sha256": "4a30782a49635f0e60247529b4557cd39713fd158ce2f99bea2ac506bffe7427"
+    },
+    {
+      "path": "demo/voices/streaming_model/pt-Spk0_woman.pt",
+      "bytes": 2268290,
+      "sha256": "40f3a231e011f9c5e1eb4e852599751ce749439edceb36d0fa2bca952387f5a9"
+    },
+    {
+      "path": "demo/voices/streaming_model/pt-Spk1_man.pt",
+      "bytes": 3554890,
+      "sha256": "06a0052170a4ae5217931eb84318a6f86279439b536ad9780c724526d84148e5"
+    },
+    {
+      "path": "demo/voices/streaming_model/sp-Spk0_woman.pt",
+      "bytes": 4243906,
+      "sha256": "a8b2c54cfe9b46a711642a96cdcc49545140374ae769cc62cf89c593c38b13c0"
+    },
+    {
+      "path": "demo/voices/streaming_model/sp-Spk1_man.pt",
+      "bytes": 5130522,
+      "sha256": "9857e3c03334b1934d34dd3aed8b36cb1e6a09367e99c9e164cd3cd8f091edcb"
+    }
+  ]
+}

@@ -1,0 +1,949 @@
+{
+  "vieneu": {
+    "variants": {
+      "v3turbo": {
+        "voices": [
+          {
+            "id": "Adam bựa",
+            "name": "Adam bựa",
+            "description": "Nam · Bắc · Phong cách tự nhiên",
+            "language": "vi",
+            "gender": "male",
+            "region": "Bắc",
+            "featured": true,
+            "kind": "preset"
+          },
+          {
+            "id": "Trúc Ly",
+            "name": "Trúc Ly",
+            "description": "Nữ · Bắc · Phong cách tự nhiên",
+            "language": "vi",
+            "gender": "female",
+            "region": "Bắc",
+            "featured": true,
+            "kind": "preset"
+          },
+          {
+            "id": "Thiện Minh",
+            "name": "Thiện Minh",
+            "description": "Nam · Bắc · Phong cách kể chuyện",
+            "language": "vi",
+            "gender": "male",
+            "region": "Bắc",
+            "featured": true,
+            "kind": "preset"
+          },
+          {
+            "id": "Mai Anh",
+            "name": "Mai Anh",
+            "description": "Nữ · Bắc · Phong cách tin tức",
+            "language": "vi",
+            "gender": "female",
+            "region": "Bắc",
+            "featured": true,
+            "kind": "preset"
+          },
+          {
+            "id": "Hải Đăng",
+            "name": "Hải Đăng",
+            "description": "Nam · Bắc · Phong cách tự nhiên",
+            "language": "vi",
+            "gender": "male",
+            "region": "Bắc",
+            "featured": true,
+            "kind": "preset"
+          },
+          {
+            "id": "Thùy Dung",
+            "name": "Thùy Dung",
+            "description": "Nữ · Nam · Phong cách tin tức",
+            "language": "vi",
+            "gender": "female",
+            "region": "Nam",
+            "featured": true,
+            "kind": "preset"
+          },
+          {
+            "id": "Thiền Tâm Đức",
+            "name": "Thiền Tâm Đức",
+            "description": "Nam · Bắc · Phong cách kể chuyện",
+            "language": "vi",
+            "gender": "male",
+            "region": "Bắc",
+            "featured": true,
+            "kind": "preset"
+          },
+          {
+            "id": "Ngọc Huyền",
+            "name": "Ngọc Huyền",
+            "description": "Nữ · Bắc · Giọng đọc tự nhiên",
+            "language": "vi",
+            "gender": "female",
+            "region": "Bắc",
+            "featured": true,
+            "kind": "preset"
+          },
+          {
+            "id": "Quang Sơn",
+            "name": "Quang Sơn",
+            "description": "Nam · Trung · Phong cách tự nhiên",
+            "language": "vi",
+            "gender": "male",
+            "region": "Trung",
+            "featured": true,
+            "kind": "preset"
+          },
+          {
+            "id": "Ngọc Trân",
+            "name": "Ngọc Trân",
+            "description": "Nữ · Trung · Phong cách tự nhiên",
+            "language": "vi",
+            "gender": "female",
+            "region": "Trung",
+            "featured": true,
+            "kind": "preset"
+          },
+          {
+            "id": "Minh Đức",
+            "name": "Minh Đức",
+            "description": "Nam · Bắc · Phong cách tin tức",
+            "language": "vi",
+            "gender": "male",
+            "region": "Bắc",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Phạm Tuyên",
+            "name": "Phạm Tuyên",
+            "description": "Nam · Bắc · Phong cách tự nhiên",
+            "language": "vi",
+            "gender": "male",
+            "region": "Bắc",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Thái Sơn",
+            "name": "Thái Sơn",
+            "description": "Nam · Nam · Phong cách kể chuyện",
+            "language": "vi",
+            "gender": "male",
+            "region": "Nam",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Xuân Vĩnh",
+            "name": "Xuân Vĩnh",
+            "description": "Nam · Bắc · Phong cách tự nhiên",
+            "language": "vi",
+            "gender": "male",
+            "region": "Bắc",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Thanh Bình",
+            "name": "Thanh Bình",
+            "description": "Nam · Bắc · Phong cách kể chuyện",
+            "language": "vi",
+            "gender": "male",
+            "region": "Bắc",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Ngọc Linh",
+            "name": "Ngọc Linh",
+            "description": "Nữ · Bắc · Phong cách kể chuyện",
+            "language": "vi",
+            "gender": "female",
+            "region": "Bắc",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Đoan Trang",
+            "name": "Đoan Trang",
+            "description": "Nữ · Bắc · Phong cách tự nhiên",
+            "language": "vi",
+            "gender": "female",
+            "region": "Bắc",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Thục Đoan",
+            "name": "Thục Đoan",
+            "description": "Nữ · Nam · Phong cách kể chuyện",
+            "language": "vi",
+            "gender": "female",
+            "region": "Nam",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Minh Triết",
+            "name": "Minh Triết",
+            "description": "Nam · Nam · Phong cách tin tức",
+            "language": "vi",
+            "gender": "male",
+            "region": "Nam",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Mỹ Duyên",
+            "name": "Mỹ Duyên",
+            "description": "Nữ · Nam · Phong cách đọc truyện",
+            "language": "vi",
+            "gender": "female",
+            "region": "Nam",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Quỳnh Anh",
+            "name": "Quỳnh Anh",
+            "description": "Nữ · Bắc · Phong cách đọc truyện",
+            "language": "vi",
+            "gender": "female",
+            "region": "Bắc",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Đức Trí",
+            "name": "Đức Trí",
+            "description": "Nam · Nam · Phong cách đọc truyện",
+            "language": "vi",
+            "gender": "male",
+            "region": "Nam",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Kim Thanh",
+            "name": "Kim Thanh",
+            "description": "Nữ · Nam · Phong cách đọc truyện",
+            "language": "vi",
+            "gender": "female",
+            "region": "Nam",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Adam",
+            "name": "Adam",
+            "description": "Nam · Nam · Giọng đọc tự nhiên",
+            "language": "vi",
+            "gender": "male",
+            "region": "Nam",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Quốc Tuấn",
+            "name": "Quốc Tuấn",
+            "description": "Nam · Bắc · Phong cách tự nhiên",
+            "language": "vi",
+            "gender": "male",
+            "region": "Bắc",
+            "featured": false,
+            "kind": "preset"
+          }
+        ],
+        "default": "Hải Đăng",
+        "source": "Danh sách preset từ mã nguồn VieNeu v3turbo"
+      },
+      "v3nano": {
+        "voices": [
+          {
+            "id": "Adam",
+            "name": "Adam",
+            "description": "Nam · Nam · Giọng đọc tự nhiên",
+            "language": "vi",
+            "gender": "male",
+            "region": "",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Ái Hân",
+            "name": "Ái Hân",
+            "description": "Nữ · Nam · Phong cách tin tức",
+            "language": "vi",
+            "gender": "female",
+            "region": "",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Mỹ Duyên",
+            "name": "Mỹ Duyên",
+            "description": "Nữ · Bắc · Phong cách đọc truyện",
+            "language": "vi",
+            "gender": "female",
+            "region": "",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Đức Trí",
+            "name": "Đức Trí",
+            "description": "Nam · Bắc · Phong cách đọc truyện",
+            "language": "vi",
+            "gender": "male",
+            "region": "",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Hữu Quân",
+            "name": "Hữu Quân",
+            "description": "Nam · Bắc · Phong cách tin tức",
+            "language": "vi",
+            "gender": "male",
+            "region": "",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Xuân Tiên",
+            "name": "Xuân Tiên",
+            "description": "Nữ · Bắc · Phong cách tin tức",
+            "language": "vi",
+            "gender": "female",
+            "region": "",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Mai Anh",
+            "name": "Mai Anh",
+            "description": "Nữ · Bắc · Phong cách tin tức",
+            "language": "vi",
+            "gender": "female",
+            "region": "",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Trúc Ly",
+            "name": "Trúc Ly",
+            "description": "Nữ · Bắc · Phong cách tự nhiên",
+            "language": "vi",
+            "gender": "female",
+            "region": "",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Anh Khôi",
+            "name": "Anh Khôi",
+            "description": "Nam · Bắc · Phong cách kể chuyện",
+            "language": "vi",
+            "gender": "male",
+            "region": "",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Minh Quân",
+            "name": "Minh Quân",
+            "description": "Nam · Bắc · Phong cách tự nhiên",
+            "language": "vi",
+            "gender": "male",
+            "region": "",
+            "featured": false,
+            "kind": "preset"
+          },
+          {
+            "id": "Mạnh Dũng",
+            "name": "Mạnh Dũng",
+            "description": "Nam · Bắc · Phong cách tự nhiên",
+            "language": "vi",
+            "gender": "male",
+            "region": "",
+            "featured": false,
+            "kind": "preset"
+          }
+        ],
+        "default": "Minh Quân",
+        "source": "Danh sách preset từ mã nguồn VieNeu v3nano"
+      }
+    },
+    "voices": [
+      {
+        "id": "Adam bựa",
+        "name": "Adam bựa",
+        "description": "Nam · Bắc · Phong cách tự nhiên",
+        "language": "vi",
+        "gender": "male",
+        "region": "Bắc",
+        "featured": true,
+        "kind": "preset"
+      },
+      {
+        "id": "Trúc Ly",
+        "name": "Trúc Ly",
+        "description": "Nữ · Bắc · Phong cách tự nhiên",
+        "language": "vi",
+        "gender": "female",
+        "region": "Bắc",
+        "featured": true,
+        "kind": "preset"
+      },
+      {
+        "id": "Thiện Minh",
+        "name": "Thiện Minh",
+        "description": "Nam · Bắc · Phong cách kể chuyện",
+        "language": "vi",
+        "gender": "male",
+        "region": "Bắc",
+        "featured": true,
+        "kind": "preset"
+      },
+      {
+        "id": "Mai Anh",
+        "name": "Mai Anh",
+        "description": "Nữ · Bắc · Phong cách tin tức",
+        "language": "vi",
+        "gender": "female",
+        "region": "Bắc",
+        "featured": true,
+        "kind": "preset"
+      },
+      {
+        "id": "Hải Đăng",
+        "name": "Hải Đăng",
+        "description": "Nam · Bắc · Phong cách tự nhiên",
+        "language": "vi",
+        "gender": "male",
+        "region": "Bắc",
+        "featured": true,
+        "kind": "preset"
+      },
+      {
+        "id": "Thùy Dung",
+        "name": "Thùy Dung",
+        "description": "Nữ · Nam · Phong cách tin tức",
+        "language": "vi",
+        "gender": "female",
+        "region": "Nam",
+        "featured": true,
+        "kind": "preset"
+      },
+      {
+        "id": "Thiền Tâm Đức",
+        "name": "Thiền Tâm Đức",
+        "description": "Nam · Bắc · Phong cách kể chuyện",
+        "language": "vi",
+        "gender": "male",
+        "region": "Bắc",
+        "featured": true,
+        "kind": "preset"
+      },
+      {
+        "id": "Ngọc Huyền",
+        "name": "Ngọc Huyền",
+        "description": "Nữ · Bắc · Giọng đọc tự nhiên",
+        "language": "vi",
+        "gender": "female",
+        "region": "Bắc",
+        "featured": true,
+        "kind": "preset"
+      },
+      {
+        "id": "Quang Sơn",
+        "name": "Quang Sơn",
+        "description": "Nam · Trung · Phong cách tự nhiên",
+        "language": "vi",
+        "gender": "male",
+        "region": "Trung",
+        "featured": true,
+        "kind": "preset"
+      },
+      {
+        "id": "Ngọc Trân",
+        "name": "Ngọc Trân",
+        "description": "Nữ · Trung · Phong cách tự nhiên",
+        "language": "vi",
+        "gender": "female",
+        "region": "Trung",
+        "featured": true,
+        "kind": "preset"
+      },
+      {
+        "id": "Minh Đức",
+        "name": "Minh Đức",
+        "description": "Nam · Bắc · Phong cách tin tức",
+        "language": "vi",
+        "gender": "male",
+        "region": "Bắc",
+        "featured": false,
+        "kind": "preset"
+      },
+      {
+        "id": "Phạm Tuyên",
+        "name": "Phạm Tuyên",
+        "description": "Nam · Bắc · Phong cách tự nhiên",
+        "language": "vi",
+        "gender": "male",
+        "region": "Bắc",
+        "featured": false,
+        "kind": "preset"
+      },
+      {
+        "id": "Thái Sơn",
+        "name": "Thái Sơn",
+        "description": "Nam · Nam · Phong cách kể chuyện",
+        "language": "vi",
+        "gender": "male",
+        "region": "Nam",
+        "featured": false,
+        "kind": "preset"
+      },
+      {
+        "id": "Xuân Vĩnh",
+        "name": "Xuân Vĩnh",
+        "description": "Nam · Bắc · Phong cách tự nhiên",
+        "language": "vi",
+        "gender": "male",
+        "region": "Bắc",
+        "featured": false,
+        "kind": "preset"
+      },
+      {
+        "id": "Thanh Bình",
+        "name": "Thanh Bình",
+        "description": "Nam · Bắc · Phong cách kể chuyện",
+        "language": "vi",
+        "gender": "male",
+        "region": "Bắc",
+        "featured": false,
+        "kind": "preset"
+      },
+      {
+        "id": "Ngọc Linh",
+        "name": "Ngọc Linh",
+        "description": "Nữ · Bắc · Phong cách kể chuyện",
+        "language": "vi",
+        "gender": "female",
+        "region": "Bắc",
+        "featured": false,
+        "kind": "preset"
+      },
+      {
+        "id": "Đoan Trang",
+        "name": "Đoan Trang",
+        "description": "Nữ · Bắc · Phong cách tự nhiên",
+        "language": "vi",
+        "gender": "female",
+        "region": "Bắc",
+        "featured": false,
+        "kind": "preset"
+      },
+      {
+        "id": "Thục Đoan",
+        "name": "Thục Đoan",
+        "description": "Nữ · Nam · Phong cách kể chuyện",
+        "language": "vi",
+        "gender": "female",
+        "region": "Nam",
+        "featured": false,
+        "kind": "preset"
+      },
+      {
+        "id": "Minh Triết",
+        "name": "Minh Triết",
+        "description": "Nam · Nam · Phong cách tin tức",
+        "language": "vi",
+        "gender": "male",
+        "region": "Nam",
+        "featured": false,
+        "kind": "preset"
+      },
+      {
+        "id": "Mỹ Duyên",
+        "name": "Mỹ Duyên",
+        "description": "Nữ · Nam · Phong cách đọc truyện",
+        "language": "vi",
+        "gender": "female",
+        "region": "Nam",
+        "featured": false,
+        "kind": "preset"
+      },
+      {
+        "id": "Quỳnh Anh",
+        "name": "Quỳnh Anh",
+        "description": "Nữ · Bắc · Phong cách đọc truyện",
+        "language": "vi",
+        "gender": "female",
+        "region": "Bắc",
+        "featured": false,
+        "kind": "preset"
+      },
+      {
+        "id": "Đức Trí",
+        "name": "Đức Trí",
+        "description": "Nam · Nam · Phong cách đọc truyện",
+        "language": "vi",
+        "gender": "male",
+        "region": "Nam",
+        "featured": false,
+        "kind": "preset"
+      },
+      {
+        "id": "Kim Thanh",
+        "name": "Kim Thanh",
+        "description": "Nữ · Nam · Phong cách đọc truyện",
+        "language": "vi",
+        "gender": "female",
+        "region": "Nam",
+        "featured": false,
+        "kind": "preset"
+      },
+      {
+        "id": "Adam",
+        "name": "Adam",
+        "description": "Nam · Nam · Giọng đọc tự nhiên",
+        "language": "vi",
+        "gender": "male",
+        "region": "Nam",
+        "featured": false,
+        "kind": "preset"
+      },
+      {
+        "id": "Quốc Tuấn",
+        "name": "Quốc Tuấn",
+        "description": "Nam · Bắc · Phong cách tự nhiên",
+        "language": "vi",
+        "gender": "male",
+        "region": "Bắc",
+        "featured": false,
+        "kind": "preset"
+      }
+    ],
+    "default": "Hải Đăng",
+    "source": "Danh sách preset từ mã nguồn VieNeu v3turbo"
+  },
+  "vibevoice": {
+    "voices": [
+      {
+        "id": "de-spk0_man",
+        "name": "Spk0 · Nam",
+        "description": "Preset Microsoft · DE",
+        "language": "de",
+        "gender": "male",
+        "kind": "preset"
+      },
+      {
+        "id": "de-spk1_woman",
+        "name": "Spk1 · Nữ",
+        "description": "Preset Microsoft · DE",
+        "language": "de",
+        "gender": "female",
+        "kind": "preset"
+      },
+      {
+        "id": "en-carter_man",
+        "name": "Carter · Nam",
+        "description": "Preset Microsoft · EN",
+        "language": "en",
+        "gender": "male",
+        "kind": "preset"
+      },
+      {
+        "id": "en-davis_man",
+        "name": "Davis · Nam",
+        "description": "Preset Microsoft · EN",
+        "language": "en",
+        "gender": "male",
+        "kind": "preset"
+      },
+      {
+        "id": "en-emma_woman",
+        "name": "Emma · Nữ",
+        "description": "Preset Microsoft · EN",
+        "language": "en",
+        "gender": "female",
+        "kind": "preset"
+      },
+      {
+        "id": "en-frank_man",
+        "name": "Frank · Nam",
+        "description": "Preset Microsoft · EN",
+        "language": "en",
+        "gender": "male",
+        "kind": "preset"
+      },
+      {
+        "id": "en-grace_woman",
+        "name": "Grace · Nữ",
+        "description": "Preset Microsoft · EN",
+        "language": "en",
+        "gender": "female",
+        "kind": "preset"
+      },
+      {
+        "id": "en-mike_man",
+        "name": "Mike · Nam",
+        "description": "Preset Microsoft · EN",
+        "language": "en",
+        "gender": "male",
+        "kind": "preset"
+      },
+      {
+        "id": "fr-spk0_man",
+        "name": "Spk0 · Nam",
+        "description": "Preset Microsoft · FR",
+        "language": "fr",
+        "gender": "male",
+        "kind": "preset"
+      },
+      {
+        "id": "fr-spk1_woman",
+        "name": "Spk1 · Nữ",
+        "description": "Preset Microsoft · FR",
+        "language": "fr",
+        "gender": "female",
+        "kind": "preset"
+      },
+      {
+        "id": "in-samuel_man",
+        "name": "Samuel · Nam",
+        "description": "Preset Microsoft · IN",
+        "language": "en",
+        "gender": "male",
+        "kind": "preset"
+      },
+      {
+        "id": "it-spk0_woman",
+        "name": "Spk0 · Nữ",
+        "description": "Preset Microsoft · IT",
+        "language": "it",
+        "gender": "female",
+        "kind": "preset"
+      },
+      {
+        "id": "it-spk1_man",
+        "name": "Spk1 · Nam",
+        "description": "Preset Microsoft · IT",
+        "language": "it",
+        "gender": "male",
+        "kind": "preset"
+      },
+      {
+        "id": "jp-spk0_man",
+        "name": "Spk0 · Nam",
+        "description": "Preset Microsoft · JP",
+        "language": "ja",
+        "gender": "male",
+        "kind": "preset"
+      },
+      {
+        "id": "jp-spk1_woman",
+        "name": "Spk1 · Nữ",
+        "description": "Preset Microsoft · JP",
+        "language": "ja",
+        "gender": "female",
+        "kind": "preset"
+      },
+      {
+        "id": "kr-spk0_woman",
+        "name": "Spk0 · Nữ",
+        "description": "Preset Microsoft · KR",
+        "language": "ko",
+        "gender": "female",
+        "kind": "preset"
+      },
+      {
+        "id": "kr-spk1_man",
+        "name": "Spk1 · Nam",
+        "description": "Preset Microsoft · KR",
+        "language": "ko",
+        "gender": "male",
+        "kind": "preset"
+      },
+      {
+        "id": "nl-spk0_man",
+        "name": "Spk0 · Nam",
+        "description": "Preset Microsoft · NL",
+        "language": "nl",
+        "gender": "male",
+        "kind": "preset"
+      },
+      {
+        "id": "nl-spk1_woman",
+        "name": "Spk1 · Nữ",
+        "description": "Preset Microsoft · NL",
+        "language": "nl",
+        "gender": "female",
+        "kind": "preset"
+      },
+      {
+        "id": "pl-spk0_man",
+        "name": "Spk0 · Nam",
+        "description": "Preset Microsoft · PL",
+        "language": "pl",
+        "gender": "male",
+        "kind": "preset"
+      },
+      {
+        "id": "pl-spk1_woman",
+        "name": "Spk1 · Nữ",
+        "description": "Preset Microsoft · PL",
+        "language": "pl",
+        "gender": "female",
+        "kind": "preset"
+      },
+      {
+        "id": "pt-spk0_woman",
+        "name": "Spk0 · Nữ",
+        "description": "Preset Microsoft · PT",
+        "language": "pt",
+        "gender": "female",
+        "kind": "preset"
+      },
+      {
+        "id": "pt-spk1_man",
+        "name": "Spk1 · Nam",
+        "description": "Preset Microsoft · PT",
+        "language": "pt",
+        "gender": "male",
+        "kind": "preset"
+      },
+      {
+        "id": "sp-spk0_woman",
+        "name": "Spk0 · Nữ",
+        "description": "Preset Microsoft · SP",
+        "language": "es",
+        "gender": "female",
+        "kind": "preset"
+      },
+      {
+        "id": "sp-spk1_man",
+        "name": "Spk1 · Nam",
+        "description": "Preset Microsoft · SP",
+        "language": "es",
+        "gender": "male",
+        "kind": "preset"
+      }
+    ],
+    "default": "en-carter_man",
+    "source": "Preset đi kèm VibeVoice Realtime; có thể quét thêm giọng mở rộng đã cài."
+  },
+  "chatterbox": {
+    "voices": [
+      {
+        "id": "default",
+        "name": "Giọng mặc định checkpoint",
+        "description": "Giọng điều kiện conds.pt do checkpoint cung cấp, nếu có.",
+        "language": "",
+        "kind": "default"
+      }
+    ],
+    "default": "default",
+    "source": "Chatterbox Multilingual không có danh mục nhiều giọng có tên. Có thể dùng giọng mặc định hoặc giọng clone."
+  },
+  "index-tts": {
+    "voices": [
+      {
+        "id": "voice_01.wav",
+        "name": "Mẫu 01",
+        "description": "File tham chiếu chính thức của IndexTTS · tải khi dùng lần đầu",
+        "language": "",
+        "kind": "sample"
+      },
+      {
+        "id": "voice_02.wav",
+        "name": "Mẫu 02",
+        "description": "File tham chiếu chính thức của IndexTTS · tải khi dùng lần đầu",
+        "language": "",
+        "kind": "sample"
+      },
+      {
+        "id": "voice_03.wav",
+        "name": "Mẫu 03",
+        "description": "File tham chiếu chính thức của IndexTTS · tải khi dùng lần đầu",
+        "language": "",
+        "kind": "sample"
+      },
+      {
+        "id": "voice_04.wav",
+        "name": "Mẫu 04",
+        "description": "File tham chiếu chính thức của IndexTTS · tải khi dùng lần đầu",
+        "language": "",
+        "kind": "sample"
+      },
+      {
+        "id": "voice_05.wav",
+        "name": "Mẫu 05",
+        "description": "File tham chiếu chính thức của IndexTTS · tải khi dùng lần đầu",
+        "language": "",
+        "kind": "sample"
+      },
+      {
+        "id": "voice_06.wav",
+        "name": "Mẫu 06",
+        "description": "File tham chiếu chính thức của IndexTTS · tải khi dùng lần đầu",
+        "language": "",
+        "kind": "sample"
+      },
+      {
+        "id": "voice_07.wav",
+        "name": "Mẫu 07",
+        "description": "File tham chiếu chính thức của IndexTTS · tải khi dùng lần đầu",
+        "language": "",
+        "kind": "sample"
+      },
+      {
+        "id": "voice_08.wav",
+        "name": "Mẫu 08",
+        "description": "File tham chiếu chính thức của IndexTTS · tải khi dùng lần đầu",
+        "language": "",
+        "kind": "sample"
+      },
+      {
+        "id": "voice_09.wav",
+        "name": "Mẫu 09",
+        "description": "File tham chiếu chính thức của IndexTTS · tải khi dùng lần đầu",
+        "language": "",
+        "kind": "sample"
+      },
+      {
+        "id": "voice_11.wav",
+        "name": "Mẫu 11",
+        "description": "File tham chiếu chính thức của IndexTTS · tải khi dùng lần đầu",
+        "language": "",
+        "kind": "sample"
+      },
+      {
+        "id": "voice_12.wav",
+        "name": "Mẫu 12",
+        "description": "File tham chiếu chính thức của IndexTTS · tải khi dùng lần đầu",
+        "language": "",
+        "kind": "sample"
+      }
+    ],
+    "default": "voice_01.wav",
+    "source": "File mẫu tham chiếu của dự án, không phải danh sách giọng đã huấn luyện có tên."
+  },
+  "gpt-sovits": {
+    "voices": [],
+    "default": "",
+    "source": "GPT-SoVITS không kèm kho giọng preset. Chọn giọng bạn đã lưu hoặc tải âm thanh tham chiếu."
+  },
+  "fish-speech": {
+    "voices": [],
+    "default": "",
+    "source": "Danh sách giọng được đọc từ /v1/references/list của Fish Speech trên máy bạn khi API đang chạy."
+  },
+  "whisper": {
+    "voices": [],
+    "default": "",
+    "source": "Whisper chép lời âm thanh, không có giọng đọc."
+  }
+}

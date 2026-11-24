@@ -1,0 +1,41 @@
+[
+  {
+    "id": "whisper",
+    "repo": "openai/whisper",
+    "sha": "86098128c0b4f24f0e2aa2994de830614b474227"
+  },
+  {
+    "id": "gpt-sovits",
+    "repo": "RVC-Boss/GPT-SoVITS",
+    "sha": "1b47ca07ef43a284e0b8bd7f29d3e1e3ff76082a"
+  },
+  {
+    "id": "vibevoice",
+    "repo": "microsoft/VibeVoice",
+    "sha": "16fb2cb1217c9934a886e1948ffb06120caa2df5"
+  },
+  {
+    "id": "chatterbox",
+    "repo": "resemble-ai/chatterbox",
+    "sha": "5de7a54aa4e5e2baadb0182dde554908b48b85c2"
+  },
+  {
+    "id": "index-tts",
+    "repo": "index-tts/index-tts",
+    "sha": "d9e41aac89fd00b3d71497fddb287b7f24613712"
+  },
+  {
+    "id": "fish-speech",
+    "repo": "fishaudio/fish-speech",
+    "sha": "541566932abbaebcb0a40e562a1f846738383f38"
+  },
+  {
+    "id": "vieneu",
+    "repo": "pnnbao97/VieNeu-TTS",
+    "sha": "bd0f88eb8de7d560753a6172ba9c868f309a101c"
+  },
+  {
+    "id": "moss-tts",
+    "sha": "934d6826b084c46a0d033402174d5f8ac4ed2519"
+  }
+]

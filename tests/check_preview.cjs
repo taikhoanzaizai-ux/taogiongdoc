@@ -1,0 +1,23 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const root=__dirname+'/../dist/',elements={};
+const modal={open:false,addEventListener(){},querySelectorAll(){return []}};elements['#modal']=modal;
+const document={querySelector:s=>elements[s]||null,querySelectorAll:()=>[],addEventListener(){}};
+const ctx={document,window:{addEventListener(){}},localStorage:{getItem:()=>null,setItem(){}},setTimeout,clearTimeout,console,URL,Blob,FormData,AbortSignal};
+vm.createContext(ctx);let source=fs.readFileSync(root+'app.js','utf8');source=source.slice(0,source.lastIndexOf('(async()=>'));vm.runInContext(source,ctx);
+ctx.catalog=JSON.parse(fs.readFileSync(root+'engines.json'));ctx.banks=JSON.parse(fs.readFileSync(root+'presets.json'));ctx.calls=[];
+vm.runInContext(`S.engines=catalog;S.banks=banks;S.connected=true;S.engine='vieneu';S.language='vi';S.text='Kịch bản dài của người dùng phải được giữ nguyên.';S.jobs=[];
+paintPreview=()=>{};toast=()=>{};navigate=view=>{S.view=view};
+api=async(path,options)=>{let body=options?.body instanceof FormData?Object.fromEntries(options.body.entries()):JSON.parse(options?.body||'{}');calls.push({path,body});if(path==='/preview-references')return {id:'temp-reference'};if(path==='/voices')return {id:'saved-reference',name:'Test',preferred_engine:body.preferred_engine};if(path==='/previews')return {id:'sample-'+calls.length,status:'done',type:'preview',file:'voice.wav'};throw Error('Unexpected route '+path)};
+`,ctx);
+(async()=>{
+ await vm.runInContext(`requestPreview('studio')`,ctx);assert.equal(ctx.calls.at(-1).path,'/previews');assert.equal(ctx.calls.at(-1).body.engine,'vieneu');assert.equal(ctx.calls.at(-1).body.text,'Xin chào, đây là giọng đọc bạn đang nghe thử trong Quân Voice Studio.');assert(ctx.calls.at(-1).body.text.length<400);
+ assert.equal(vm.runInContext('S.text',ctx),'Kịch bản dài của người dùng phải được giữ nguyên.');assert.equal(vm.runInContext('S.jobs.length',ctx),0);
+ vm.runInContext(`S.cloneEngine='chatterbox';S.cloneForm={name:'Test',language:'vi',transcript:'Xin chào',consent:true,outputLanguage:'en'};selectedFile=new Blob(['fixture'],{type:'audio/wav'});`,ctx);
+ await vm.runInContext(`requestPreview('clone')`,ctx);assert.equal(ctx.calls.at(-1).body.engine,'chatterbox');assert.equal(ctx.calls.at(-1).body.preview_ref_id,'temp-reference');assert.equal(ctx.calls.at(-1).body.language,'en');assert(!ctx.calls.some(x=>x.path==='/voices'));
+ const uploadCount=ctx.calls.filter(x=>x.path==='/preview-references').length;await vm.runInContext(`requestPreview('clone')`,ctx);assert.equal(ctx.calls.filter(x=>x.path==='/preview-references').length,uploadCount);
+ vm.runInContext(`S.libraryPreview={engine:'index-tts',id:'voice_01.wav',language:'en',variant:'2.5',name:'Mẫu 01'};`,ctx);await vm.runInContext(`requestPreview('library')`,ctx);assert.equal(ctx.calls.at(-1).body.engine,'index-tts');assert.equal(vm.runInContext('S.engine',ctx),'vieneu');
+ Object.assign(elements,{'#voice-name':{value:'Giọng mới'},'#voice-language':{value:'vi'},'#reference-text':{value:'Xin chào'},'#clone-output-language':{value:'en'},'#consent':{checked:true}});
+ ctx.submitter={disabled:false};await vm.runInContext(`saveVoice({preventDefault(){},submitter})`,ctx);assert.equal(ctx.calls.at(-1).body.preferred_engine,'chatterbox');assert.equal(vm.runInContext('S.engine',ctx),'chatterbox');assert.equal(vm.runInContext('S.language',ctx),'en');assert.equal(vm.runInContext('S.voice',ctx),'saved-reference');assert.equal(ctx.submitter.disabled,false);
+ const html=vm.runInContext('clone()',ctx);assert.equal((html.match(/data-clone-engine=/g)||[]).length,7);assert.equal((html.match(/ disabled/g)||[]).length,2);assert(html.includes('preview-text-clone'));assert(vm.runInContext('studio()',ctx).includes('preview-text-studio'));
+ console.log('Preview UI: native/clone/library call preview API, keep script/history intact, reuse temporary reference, preserve chosen clone model, show 7 engines with 5 selectable.');
+})().catch(e=>{console.error(e);process.exitCode=1});

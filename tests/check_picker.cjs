@@ -1,0 +1,13 @@
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const dummy={addEventListener(){},querySelectorAll:()=>[],classList:{add(){},remove(){}}};
+const ctx={document:{querySelector:()=>dummy,querySelectorAll:()=>[],addEventListener(){}},window:{addEventListener(){}},localStorage:{getItem:()=>null,setItem(){}},setTimeout,clearTimeout,URL,Blob,FormData,AbortSignal,console};
+vm.createContext(ctx);let code=fs.readFileSync(__dirname+'/../dist/app.js','utf8');code=code.slice(0,code.lastIndexOf('(async()=>'));vm.runInContext(code,ctx);
+ctx.catalog=JSON.parse(fs.readFileSync(__dirname+'/../dist/engines.json'));ctx.bank=JSON.parse(fs.readFileSync(__dirname+'/../dist/presets.json'));ctx.out={};
+vm.runInContext(`S.engines=catalog;S.banks=bank;S.connected=true;modal=(title,html)=>{out.title=title;out.html=html};S.engines.find(e=>e.id==='gpt-sovits').setup={state:'failed'};pickEngine()`,ctx);
+assert.equal((ctx.out.html.match(/data-pick-engine=/g)||[]).length,7);
+assert(ctx.out.html.includes('data-pick-engine="whisper"')&&ctx.out.html.includes('Chép lời'));
+assert(ctx.out.html.includes('data-engine-error="gpt-sovits"')&&ctx.out.html.includes('Thử lại'));
+assert(ctx.out.html.includes('العربية')&&ctx.out.html.includes('Kiswahili'));
+vm.runInContext(`S.engine='vieneu';paintPreview=()=>{};navigate=v=>{out.view=v};setEngine('whisper')`,ctx);
+assert.equal(ctx.out.view,'transcribe');assert.equal(vm.runInContext('S.engine',ctx),'vieneu');
+console.log('Picker: all 7 models, full language list, Whisper routes to transcription, error/retry actions visible.');

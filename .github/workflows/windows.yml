@@ -1,0 +1,34 @@
+name: Build Windows release
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: quanvoice-windows-release
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m compileall -q desktop
+      - run: python scripts/package.py --mini-only
+      - name: Publish Windows archive
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $version = python -c "import ast,pathlib; t=ast.parse(pathlib.Path('desktop/updates.py').read_text(encoding='utf-8')); print(next(n.value.value for n in t.body if isinstance(n,ast.Assign) and n.targets[0].id=='CURRENT_VERSION'))"
+          $tag = "v$version"
+          if ($env:GITHUB_REF_TYPE -eq 'tag' -and $env:GITHUB_REF_NAME -ne $tag) { throw "Version mismatch: $tag" }
+          gh release view $tag --json tagName 2>$null
+          if ($LASTEXITCODE -eq 0) { exit 0 }
+          gh release create $tag dist/QuanVoice-Studio-Windows.zip --target $env:GITHUB_SHA --title "Quân Voice Studio $version" --generate-notes
+          exit $LASTEXITCODE
