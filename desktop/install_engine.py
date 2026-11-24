@@ -20,7 +20,7 @@ if engine=='omnivoice':repo.mkdir(parents=True,exist_ok=True)
 else:ensure_source(engine,e,repo,bundled,ROOT/'sources.lock.json')
 def uv(*args,cwd=None):run_download([sys.executable,'-m','uv',*map(str,args)],cwd=cwd)
 if engine in ('index-tts','fish-speech'):
-    args=['sync','--python',e['python'],'--extra','webui'] if engine=='index-tts' else ['sync','--python',e['python'],'--extra','cpu']
+    args=['sync','--python',e['python'],'--extra','webui','--no-editable'] if engine=='index-tts' else ['sync','--python',e['python'],'--extra','cpu']
     uv(*args,cwd=repo);env=repo/'.venv'
 else:
     env=data/'envs'/engine
